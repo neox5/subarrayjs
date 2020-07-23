@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["es2018", "dom"],
+    "declaration": true,
+    "module": "commonjs",
+    "strict": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "lib/",
+    "target": "es6",
+    "types": ["jest"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/test/*"]
+}

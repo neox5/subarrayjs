@@ -1,0 +1,42 @@
+{
+  "name": "sub-arrays-js",
+  "version": "0.0.1",
+  "description": "Generate sub arrays from array",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "preversion": "",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neox5/subarrayjs.git"
+  },
+  "keywords": [
+    "array",
+    "subarray",
+    "javascript"
+  ],
+  "author": "Christian Faustmann <faustmannchr@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neox5/subarrayjs/issues"
+  },
+  "homepage": "https://github.com/neox5/subarrayjs#readme",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^26.0.5",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7"
+  }
+}
