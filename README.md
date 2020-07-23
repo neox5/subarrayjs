@@ -28,7 +28,7 @@ import { subArrays } from "sub-arrays-js";
 
 function run() {
   const src = [1,2,3,4];
-  const sub = subArrays(src, true, 1, src.length);
+  const sub = subArrays(src, 1, src.length, true);
   console.log(sub);
 }
 ```
@@ -39,13 +39,13 @@ function run() {
 
 # Options
 ```
-subArrays(source, <ordered>, <minLength>, <maxLength>): any[][]
+subArrays(source, <minLength>, <maxLength>, <ordered>): any[][]
 ```
 
 - `source(any[])` - Source Array
-- `ordered(boolean)` - Order sub arrays by length (default: false)
 - `minLength(number)` - Minimum sub array length (default: 1)
 - `maxLength(number)` - Maximum sub array length (default: source.length)
+- `ordered(boolean)` - Order sub arrays by length (default: false)
 
 
 ## License

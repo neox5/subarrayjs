@@ -1,4 +1,4 @@
-export function subArrays(source: any[], ordered?: boolean, minLength?: number, maxLength?: number): any[] {
+export function subArrays(source: any[], minLength?: number, maxLength?: number, ordered?: boolean): any[] {
   const result: any[] = [];
   const shouldOrder = ordered ? ordered : false;
   const len = source.length;
