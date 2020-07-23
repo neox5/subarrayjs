@@ -1,6 +1,6 @@
 {
   "name": "sub-arrays-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate sub arrays from array",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

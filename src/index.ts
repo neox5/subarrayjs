@@ -1,7 +1,8 @@
-export function subArrays(source: any[], minLength?: number, maxLength?: number): any[] {
+export function subArrays(source: any[], ordered?: boolean, minLength?: number, maxLength?: number): any[] {
   const result: any[] = [];
+  const shouldOrder = ordered ? ordered : false;
   const len = source.length;
-  const min = minLength ? minLength : 0;
+  const min = minLength ? minLength : 1;
   const max = maxLength ? maxLength : len;
 
   const fn = (index: number, min: number, max: number, src: any[], len: number, cur: any[], res: any[]) => {
@@ -26,5 +27,19 @@ export function subArrays(source: any[], minLength?: number, maxLength?: number)
     }
   }
 
+  if (shouldOrder) {
+    return result.sort(orderByLength);
+  }
+
   return result;
 }
+
+const orderByLength = (a: any[], b: any[]) => {
+  if (a.length < b.length) {
+    return -1;
+  }
+  if (a.length > b.length) {
+    return 1;
+  }
+  return 0;
+};
