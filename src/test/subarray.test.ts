@@ -17,11 +17,41 @@ describe("subArray", () => {
         bin += binomial(n, k);
       }
 
-      const len = subArrays(src, 1, max).length;
+      const len = subArrays(src, false, 1, max).length;
       if (bin !== len) {
         expect(len).toEqual(bin);
       }
     }
+  });
+
+  it("should order sub arrays by length", () => {
+    const source = [1, 2, 3, 4];
+
+    const unordered = subArrays(source, false);
+    const ordered = subArrays(source, true);
+
+    let prev: any = null;
+    let isOrdered = true;
+    unordered.forEach((el) => {
+      if (prev && prev.length > el.length) {
+        isOrdered = false;
+      }
+      prev = el;
+    });
+
+    expect(isOrdered).toEqual(false);
+
+    prev = null;
+    isOrdered = true;
+
+    ordered.forEach((el) => {
+      if (prev && prev.length > el.length) {
+        isOrdered = false;
+      }
+      prev = el;
+    });
+    
+    expect(isOrdered).toEqual(true);
   });
 });
 
